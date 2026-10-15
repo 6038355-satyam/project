@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>NovaTech | Modern Digital Solutions</title>
+
+    <style>
+        /* ==============================
+           GLOBAL STYLES
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #070b18;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+
+        /* ==============================
+           BACKGROUND EFFECTS
+        ============================== */
+
+        body::before {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #7c3aed;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.15;
+            top: -200px;
+            left: -150px;
+            z-index: -1;
+        }
+
+        body::after {
+            content: "";
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: #06b6d4;
+            border-radius: 50%;
+            filter: blur(150px);
+            opacity: 0.12;
+            right: -200px;
+            bottom: -200px;
+            z-index: -1;
+        }
+
+
+        /* ==============================
+           NAVIGATION
+        ============================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(7, 11, 24, 0.75);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        nav {
+            height: 75px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: bold;
+
+            background: linear-gradient(
+                90deg,
+                #8b5cf6,
+                #06b6d4
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #d1d5db;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #8b5cf6;
+        }
+
+        .nav-button {
+            padding: 10px 20px;
+
+            border-radius: 30px;
+
+            background: linear-gradient(
+                90deg,
+                #7c3aed,
+                #06b6d4
+            );
+
+            color: white !important;
+        }
+
+
+        /* ==============================
+           HERO SECTION
+        ============================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding-top: 100px;
+
+            position: relative;
+        }
+
+        .hero-content {
+            width: 60%;
+        }
+
+        .badge {
+            display: inline-block;
+
+            padding: 8px 18px;
+
+            border-radius: 30px;
+
+            background: rgba(139, 92, 246, 0.12);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+
+            color: #c4b5fd;
+
+            margin-bottom: 25px;
+        }
+
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 85px);
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+        .gradient-text {
+            background: linear-gradient(
+                90deg,
+                #8b5cf6,
+                #06b6d4
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            color: #9ca3af;
+
+            font-size: 18px;
+
+            max-width: 650px;
+
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            padding: 14px 28px;
+
+            border-radius: 30px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: linear-gradient(
+                90deg,
+                #7c3aed,
+                #06b6d4
+            );
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px rgba(124,58,237,0.3);
+        }
+
+        .secondary-btn {
+            border: 1px solid #374151;
+            color: #d1d5db;
+        }
+
+        .secondary-btn:hover {
+            border-color: #8b5cf6;
+            color: #ffffff;
+        }
+
+
+        /* ==============================
+           HERO VISUAL
+        ============================== */
+
+        .hero-visual {
+            position: absolute;
+
+            right: 5%;
+            top: 25%;
+
+            width: 330px;
+            height: 330px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(139,92,246,0.25),
+                    transparent 65%
+                );
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .hero-visual::before {
+            content: "✦";
+
+            font-size: 110px;
+
+            color: #8b5cf6;
+
+            text-shadow:
+                0 0 30px #8b5cf6,
+                0 0 60px #06b6d4;
+        }
+
+        @keyframes float {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+
+        /* ==============================
+           STATS
+        ============================== */
+
+        .stats {
+            padding: 50px 0;
+
+            border-top: 1px solid rgba(255,255,255,0.06);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .stats-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(4, 1fr);
+
+            gap: 20px;
+
+            text-align: center;
+        }
+
+        .stat h2 {
+            font-size: 40px;
+
+            background: linear-gradient(
+                90deg,
+                #8b5cf6,
+                #06b6d4
+            );
+
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .stat p {
+            color: #9ca3af;
+        }
+
+
+        /* ==============================
+           SECTION
+        ============================== */
+
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: auto auto 60px;
+        }
+
+        .section-title span {
+            color: #8b5cf6;
+
+            text-transform: uppercase;
+
+            letter-spacing: 3px;
+
+            font-size: 13px;
+        }
+
+        .section-title h2 {
+            font-size: 45px;
+
+            margin: 10px 0;
+        }
+
+        .section-title p {
+            color: #9ca3af;
+        }
+
+
+        /* ==============================
+           SERVICES
+        ============================== */
+
+        .services-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .card {
+            padding: 35px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,0.04);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            transition: 0.4s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+
+            border-color: rgba(139,92,246,0.5);
+
+            background: rgba(139,92,246,0.08);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.25);
+        }
+
+        .icon {
+            width: 55px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 15px;
+
+            font-size: 25px;
+
+            margin-bottom: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(139,92,246,0.2),
+                    rgba(6,182,212,0.2)
+                );
+        }
+
+        .card h3 {
+            margin-bottom: 12px;
+
+            font-size: 21px;
+        }
+
+        .card p {
+            color: #9ca3af;
+        }
+
+
+        /* ==============================
+           PROJECTS
+        ============================== */
+
+        .projects {
+            background: rgba(255,255,255,0.015);
+        }
+
+        .projects-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .project {
+            overflow: hidden;
+
+            border-radius: 20px;
+
+            background: #111827;
+
+            border: 1px solid #1f2937;
+        }
+
+        .project-image {
+            height: 210px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 50px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #312e81,
+                    #0e7490
+                );
+        }
+
+        .project-content {
+            padding: 25px;
+        }
+
+        .project-content h3 {
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: #9ca3af;
+        }
+
+
+        /* ==============================
+           CONTACT
+        ============================== */
+
+        .contact-box {
+            max-width: 850px;
+
+            margin: auto;
+
+            padding: 60px 40px;
+
+            text-align: center;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(124,58,237,0.15),
+                    rgba(6,182,212,0.1)
+                );
+
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .contact-box h2 {
+            font-size: 40px;
+
+            margin-bottom: 15px;
+        }
+
+        .contact-box p {
+            color: #9ca3af;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            padding: 30px 0;
+
+            text-align: center;
+
+            border-top: 1px solid rgba(255,255,255,0.07);
+
+            color: #6b7280;
+        }
+
+
+        /* ==============================
+           RESPONSIVE DESIGN
+        ============================== */
+
+        @media (max-width: 900px) {
+
+            .hero-content {
+                width: 100%;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .section-title h2 {
+                font-size: 35px;
+            }
+
+            .services-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .contact-box {
+                padding: 40px 20px;
+            }
+
+            .contact-box h2 {
+                font-size: 30px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+
+    <!-- =========================
+         NAVIGATION
+    ========================== -->
+
+    <header>
+
+        <div class="container">
+
+            <nav>
+
+                <div class="logo">
+                    NOVATECH
+                </div>
+
+                <ul class="nav-links">
+
+                    <li>
+                        <a href="#home">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+
+                    <li>
+                        <a href="#projects">Projects</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="nav-button">
+                            Get Started
+                        </a>
+                    </li>
+
+                </ul>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <span class="badge">
+                        🚀 Future-Ready Digital Solutions
+                    </span>
+
+                    <h1>
+                        Build.
+                        <span class="gradient-text">
+                            Create.
+                        </span>
+                        <br>
+                        Innovate.
+                    </h1>
+
+                    <p>
+                        We create modern, scalable and beautiful digital
+                        experiences that help businesses transform their
+                        ideas into powerful online solutions.
+                    </p>
+
+                    <div class="buttons">
+
+                        <a href="#services" class="primary-btn">
+                            Explore Services →
+                        </a>
+
+                        <a href="#projects" class="secondary-btn">
+                            View Projects
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hero-visual"></div>
+
+        </section>
+
+
+        <!-- =========================
+             STATISTICS
+        ========================== -->
+
+        <section class="stats">
+
+            <div class="container">
+
+                <div class="stats-grid">
+
+                    <div class="stat">
+                        <h2>50+</h2>
+                        <p>Projects Completed</p>
+                    </div>
+
+                    <div class="stat">
+                        <h2>30+</h2>
+                        <p>Happy Clients</p>
+                    </div>
+
+                    <div class="stat">
+                        <h2>5+</h2>
+                        <p>Years Experience</p>
+                    </div>
+
+                    <div class="stat">
+                        <h2>24/7</h2>
+                        <p>Support</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SERVICES
+        ========================== -->
+
+        <section id="services">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>Our Services</span>
+
+                    <h2>
+                        Everything You Need
+                    </h2>
+
+                    <p>
+                        Powerful digital solutions designed to help
+                        your business grow and succeed.
+                    </p>
+
+                </div>
+
+
+                <div class="services-grid">
+
+
+                    <div class="card">
+
+                        <div class="icon">
+                            💻
+                        </div>
+
+                        <h3>
+                            Web Development
+                        </h3>
+
+                        <p>
+                            Fast, responsive and modern websites
+                            built using the latest technologies.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="icon">
+                            🎨
+                        </div>
+
+                        <h3>
+                            UI/UX Design
+                        </h3>
+
+                        <p>
+                            Beautiful and intuitive interfaces
+                            designed to deliver amazing user experiences.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="icon">
+                            ☁️
+                        </div>
+
+                        <h3>
+                            Cloud Solutions
+                        </h3>
+
+                        <p>
+                            Reliable and scalable cloud solutions
+                            for modern applications and businesses.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="icon">
+                            📱
+                        </div>
+
+                        <h3>
+                            Mobile Development
+                        </h3>
+
+                        <p>
+                            Cross-platform mobile applications
+                            designed for performance and usability.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="icon">
+                            🔐
+                        </div>
+
+                        <h3>
+                            Cyber Security
+                        </h3>
+
+                        <p>
+                            Protect your applications and data
+                            with modern security solutions.
+                        </p>
+
+                    </div>
+
+
+                    <div class="card">
+
+                        <div class="icon">
+                            ⚡
+                        </div>
+
+                        <h3>
+                            Performance
+                        </h3>
+
+                        <p>
+                            Optimized applications with fast loading
+                            times and excellent performance.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PROJECTS
+        ========================== -->
+
+        <section class="projects" id="projects">
+
+            <div class="container">
+
+                <div class="section-title">
+
+                    <span>Our Work</span>
+
+                    <h2>
+                        Featured Projects
+                    </h2>
+
+                    <p>
+                        A few examples of projects created with
+                        creativity and modern technology.
+                    </p>
+
+                </div>
+
+
+                <div class="projects-grid">
+
+
+                    <div class="project">
+
+                        <div class="project-image">
+                            🌐
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                Business Website
+                            </h3>
+
+                            <p>
+                                A modern responsive website created
+                                for a growing business.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <div class="project-image">
+                            📊
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                Analytics Dashboard
+                            </h3>
+
+                            <p>
+                                An interactive dashboard for viewing
+                                business performance and statistics.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="project">
+
+                        <div class="project-image">
+                            ☁️
+                        </div>
+
+                        <div class="project-content">
+
+                            <h3>
+                                Cloud Application
+                            </h3>
+
+                            <p>
+                                A scalable cloud-based application
+                                deployed using modern cloud services.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONTACT
+        ========================== -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <div class="contact-box">
+
+                    <h2>
+                        Ready to Build Something Amazing?
+                    </h2>
+
+                    <p>
+                        Let's turn your ideas into a powerful
+                        digital experience.
+                    </p>
+
+                    <a
+                        href="mailto:example@email.com"
+                        class="primary-btn"
+                    >
+                        Contact Us →
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer>
+
+        <div class="container">
+
+            <p>
+                © 2026 NovaTech. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+</html>
